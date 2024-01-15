@@ -1,0 +1,126 @@
+<head>
+    <meta charset="UTF-8">
+    <h1>SRIM</h1>
+
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;border-style:solid;border-width:1px;}
+        .tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
+            font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
+            font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-buh4{background-color:#f9f9f9;text-align:left;vertical-align:top}
+        .tg .tg-0lax{text-align:left;vertical-align:top}
+        .tg .tg-6t3r{font-style:italic;font-weight:bold;text-align:left;vertical-align:top}
+    </style>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+
+
+</head>
+
+<body>
+<table class="tg">
+
+    <thead>
+    <tr>
+        <th class="tg-0lax"></th>
+        {% for result_list in result_list %}
+        <th class="tg-0lax">{{result_list.CoID}}</th>
+        {% endfor %}
+    </tr>
+
+    </thead>
+    <tbody>
+
+    <tr>
+        <td class="tg-0lax">기업가치</td>
+        {% for result_list in result_list %}
+<!--        <td class="tg-buh4">{{result_list.totalValue}}</td>-->
+        <td class="tg-buh4">{{result_list.totalValue}}</td>
+        {% endfor %}
+
+    </tr>
+    <tr>
+        <td class="tg-0lax">자기자본</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.equity}}</td>
+        {% endfor %}
+
+    </tr>
+    <tr>
+        <td class="tg-0lax">초과이익</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.excessEarnings}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-0lax">ROE</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.ROE}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-0lax">할인율</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.DCRate}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-0lax">주식수</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.shareOutstanding}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-6t3r">주당 가치</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.valuePerShare}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-6t3r">주당 가치+현금</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.valuePerShareCash}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-0lax">현재 주가</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.currentPrice}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-0lax">현금성자산</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.cashEquivalents}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-0lax">주당현금성자산</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.cashEquivalentsShare}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-0lax">PER</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.PER}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-0lax">연간이익률</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.annualRateOfReturn}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td class="tg-6t3r">연간이익율/PER</td>
+        {% for result_list in result_list %}
+        <td class="tg-buh4">{{result_list.annualRateOfReturnPER}}</td>
+        {% endfor %}
+    </tr>
+    </tbody>
+</table>
+
+</body>
